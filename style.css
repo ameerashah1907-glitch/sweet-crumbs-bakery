@@ -1,0 +1,99 @@
+:root {
+    --pink: #ffcad4;
+    --dark-pink: #d81b60;
+    --brown: #4e342e;
+    --cream: #fffafb;
+}
+
+body {
+    background-color: var(--cream);
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: var(--brown);
+    margin: 0; padding: 0;
+}
+
+header {
+    background-color: var(--pink);
+    padding: 3rem 1rem;
+    text-align: center;
+    border-bottom: 5px solid #fec5bb;
+}
+
+.logo { font-size: 2.5rem; font-weight: bold; color: var(--dark-pink); }
+
+/* Admin Dashboard */
+.admin-panel {
+    background: white;
+    border: 2px dashed var(--dark-pink);
+    padding: 20px;
+    max-width: 450px;
+    margin: 20px auto;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.admin-panel input {
+    display: block; width: 90%; margin: 10px auto;
+    padding: 12px; border-radius: 8px; border: 1px solid #ddd;
+}
+
+/* Gallery Grid */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem; padding: 2rem;
+    max-width: 1200px; margin: auto;
+}
+
+.card {
+    background: white; border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    cursor: pointer; overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.card:hover { transform: translateY(-8px); }
+.card img { width: 100%; height: 250px; object-fit: cover; }
+.card-info { padding: 1.5rem; text-align: center; }
+.price-tag { font-weight: bold; color: var(--dark-pink); font-size: 1.2rem; margin: 0; }
+
+/* Modal & Forms */
+.modal {
+    display: none; position: fixed; z-index: 2000;
+    left: 0; top: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background: white; margin: 5vh auto; padding: 2rem;
+    width: 90%; max-width: 400px; border-radius: 25px;
+    text-align: center; position: relative;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.modal-content img { width: 100%; border-radius: 15px; margin-bottom: 1rem; height: 200px; object-fit: cover; }
+
+.checkout-form input, .checkout-form textarea {
+    width: 95%; padding: 12px; margin: 8px 0;
+    border-radius: 10px; border: 1px solid #ccc; font-size: 1rem;
+}
+
+.qty-selector { margin: 15px 0; font-weight: bold; }
+#orderQty { width: 60px; padding: 5px; border-radius: 5px; }
+
+.buy-btn, .confirm-btn {
+    background-color: var(--dark-pink); color: white; border: none;
+    padding: 1rem; width: 100%; border-radius: 50px;
+    font-weight: bold; cursor: pointer; font-size: 1.1rem; transition: 0.2s;
+}
+
+.confirm-btn { background-color: #25D366; margin-top: 10px; }
+.confirm-btn:hover { background-color: #1ebe57; }
+
+.back-link { background: none; border: none; color: #888; cursor: pointer; margin-top: 15px; text-decoration: underline; }
+
+.close { position: absolute; right: 20px; top: 10px; font-size: 35px; cursor: pointer; color: #aaa; }
+
+footer { text-align: center; padding: 3rem; color: #999; }
+.admin-trigger { opacity: 0.1; cursor: pointer; font-size: 11px; }

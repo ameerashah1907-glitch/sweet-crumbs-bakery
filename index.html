@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Crumbs Bakery | Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">🧁 Sweet Crumbs Bakery</div>
+        <p>Freshly baked treats delivered to your doorstep in minutes.</p>
+    </header>
+
+    <main>
+        <section class="admin-panel" id="adminPanel" style="display: none;">
+            <h3>Owner Dashboard</h3>
+            <div class="input-group">
+                <input type="text" id="itemName" placeholder="Product Name">
+                <input type="number" id="itemPrice" placeholder="Price (Rs.)">
+                <input type="text" id="itemDesc" placeholder="Brief Description">
+                <input type="text" id="itemImg" placeholder="Image URL (Link)">
+                <button onclick="addNewProductToShop()">Add to Menu</button>
+            </div>
+        </section>
+
+        <section class="gallery" id="productGallery">
+            <div class="card" onclick="openProduct('Vanilla Cloud', 250, 'Light vanilla sponge with creamy frosting.', 'https://images.unsplash.com/photo-1550617931-e17a7b70dce2?w=500')">
+                <img src="https://images.unsplash.com/photo-1550617931-e17a7b70dce2?w=500">
+                <div class="card-info">
+                    <h3>Vanilla Cloud</h3>
+                    <p class="price-tag">Rs. 250</p>
+                </div>
+            </div>
+            
+            <div class="card" onclick="openProduct('Midnight Cake', 1500, 'Rich dark chocolate with ganache.', 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=500')">
+                <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=500">
+                <div class="card-info">
+                    <h3>Midnight Cake</h3>
+                    <p class="price-tag">Rs. 1500</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            
+            <div id="step1">
+                <img id="modalImg" src="">
+                <h2 id="modalName"></h2>
+                <p id="modalDesc"></p>
+                <h3 id="modalPrice"></h3>
+                <button class="buy-btn" onclick="showCheckout()">Order Now</button>
+            </div>
+
+            <div id="step2" style="display: none;">
+                <h2 style="color: #d81b60;">Delivery Details</h2>
+                <div class="checkout-form">
+                    <input type="text" id="custName" placeholder="Full Name">
+                    <input type="tel" id="custPhone" placeholder="WhatsApp Number">
+                    <textarea id="custAddress" placeholder="Full Address (House #, Street, Area)" rows="3"></textarea>
+                    
+                    <div class="qty-selector">
+                        <label>Quantity:</label>
+                        <input type="number" id="orderQty" value="1" min="1">
+                    </div>
+
+                    <div class="payment-note">Payment: Cash on Delivery (COD)</div>
+                    <button class="confirm-btn" onclick="sendWhatsAppOrder()">Confirm Order</button>
+                    <button class="back-link" onclick="showProduct()">← Go Back</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Sweet Crumbs Bakery</p>
+        <span class="admin-trigger" onclick="toggleAdmin()">Admin Login</span>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
